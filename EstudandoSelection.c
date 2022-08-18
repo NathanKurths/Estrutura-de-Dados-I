@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//o algoritmo comparada um elemento do vetor com todos os outros, um por um.
+
 void selecao(int Vet[], int n)
 {
     int menor, aux;
