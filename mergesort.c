@@ -14,7 +14,7 @@ int main(){
 
 int mergesort(int arr[], int inicio, int fim){
     if(inicio < fim){
-        int meio = inicio + (fim - inicio/2)
+        int meio = inicio + (fim - inicio/2);
         mergesort(arr, inicio, meio);
         mergesort(arr, meio + 1, fim);
         merge(arr, inicio, meio, fim);
@@ -42,7 +42,7 @@ void merge(int arr[], int inicio, int meio, int fim){
             i++;
         } else {
             arr[k] = R[j];
-            j++
+            j++;
         }
         k++;
     }
