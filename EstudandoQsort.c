@@ -5,7 +5,7 @@
 
 int dividir(int vetor[], int esquerda, int direita)
 {
-    int aux; // troca de posição
+    int aux; 
     int cont = esquerda;
     for (int i = esquerda + 1; i <= direita; i++)
     {

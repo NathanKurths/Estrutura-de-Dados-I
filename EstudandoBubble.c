@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
 
 // o algoritmo compara pares de elementos adjacentes, e o troca de lugar, até o ordenar.
 int main()
 {
-    int n = 4;
-    int Vet[4] = {4, 3, 2, 1};
+    clock_t t;
+    int n = 10;
+    int Vet[10] = {3, 5, 8, 1, 9, 2, 4, 7, 0, 6};
+    t = clock();
     int i, continua, aux;
     int fim = n;
 
@@ -24,8 +28,10 @@ int main()
         }
         fim--;
     } while (continua != 0);
+    t = clock() - t;
+    printf ("It took me %d clicks (%f seconds).\n",t,((float)t)/CLOCKS_PER_SEC);
 
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 10; i++)
     {
         printf("%d, ", Vet[i]);
     }
