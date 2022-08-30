@@ -12,6 +12,7 @@ int main()
     t = clock();
     int i, continua, aux;
     int fim = n;
+    int contagem = 0;
 
     do
     {
@@ -24,10 +25,12 @@ int main()
                 Vet[i] = Vet[i + 1];
                 Vet[i + 1] = aux;
                 continua = i;
+                contagem ++;
             }
         }
         fim--;
     } while (continua != 0);
+    printf("Foi efetuado %d trocas\n", contagem);
     t = clock() - t;
     printf ("It took me %d clicks (%f seconds).\n",t,((float)t)/CLOCKS_PER_SEC);
 

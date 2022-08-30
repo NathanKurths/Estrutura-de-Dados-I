@@ -8,6 +8,7 @@
 void selecao(int Vet[], int n)
 {
     int menor, aux;
+    int contagem = 0;
     for (int i = 0; i < n - 1; i++)
     {
         menor = i;
@@ -21,8 +22,10 @@ void selecao(int Vet[], int n)
             aux = Vet[i];
             Vet[i] = Vet[menor];
             Vet[menor] = aux;
+            contagem ++;
         }
     }
+    printf("O numero de trocas foi %d\n", contagem);
 }
 int main()
 {

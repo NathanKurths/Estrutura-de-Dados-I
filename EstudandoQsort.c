@@ -7,6 +7,7 @@ int dividir(int vetor[], int esquerda, int direita)
 {
     int aux; 
     int cont = esquerda;
+    int contagem = 0;
     for (int i = esquerda + 1; i <= direita; i++)
     {
         if (vetor[i] < vetor[esquerda])
@@ -15,8 +16,10 @@ int dividir(int vetor[], int esquerda, int direita)
             aux = vetor[i];
             vetor[i] = vetor[cont];
             vetor[cont] = aux;
+            contagem ++;
         }
     }
+    printf("Foi efetuado %d trocas\n", contagem);
     aux = vetor[esquerda];
     vetor[esquerda] = vetor[cont];
     vetor[cont] = aux;
