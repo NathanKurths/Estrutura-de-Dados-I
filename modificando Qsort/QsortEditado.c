@@ -3,8 +3,8 @@
 #include <time.h>
 #include <unistd.h>
 
-//o quick sort padrão me retornou 0.000019 segundos a últimos digitos 40.
-// o quick sort random me retorna de dois últimos digitos 32 a 62, piorou um pouco.
+//o quick sort padrão me retorna com frequência um tempo maior
+// o quick sort random me retorna com frequência a metade do tempo da sua versão padrão
 
 
 int dividir(int vetor[], int esquerda, int direita)
@@ -57,10 +57,15 @@ void quick(int vetor[], int esquerda, int direita)
 
 int main()
 {
+    clock_t t;
     int vetor[] = {3, 5, 8, 1, 9, 2, 4, 7, 0, 6};
     int n = 10;
+    t = clock();
 
     quick(vetor, 0, n);
+
+     t = clock() - t;
+     printf ("It took me %d clicks (%f seconds).\n",t,((float)t)/CLOCKS_PER_SEC);
 
     printf("\n\n\n");
 
@@ -70,17 +75,7 @@ int main()
 
     printf("\n\n\n");
 
-    double time_spent = 0.0;
-
-    clock_t begin = clock();
-
-    sleep(3);
-
-    clock_t end = clock();
-
-    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
-
-    printf("The elapsed time is %f seconds \n", time_spent);
+ 
 
     return 0;
 }
