@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "A.C": "cpp"
+        "A.C": "cpp",
+        "quicksort.C": "cpp"
     }
 }

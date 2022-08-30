@@ -13,7 +13,7 @@ void funcImprimir(int vetor[])
     for (int i = 0; i < tamanho; i++)
     {
 
-        if (vetor[i] != vetor[9])
+        if (vetor[i] != tamanho)
         {
             printf("%d, ", vetor[i]);
         }

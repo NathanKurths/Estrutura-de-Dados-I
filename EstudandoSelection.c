@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//o algoritmo comparada um elemento do vetor com todos os outros, um por um.
+// o algoritmo comparada um elemento do vetor com todos os outros, um por um.
 
 void selecao(int Vet[], int n)
 {
@@ -14,7 +14,7 @@ void selecao(int Vet[], int n)
             if (Vet[menor] > Vet[j])
                 menor = j;
         }
-        if (i != menor)
+        if (Vet[i] != Vet[menor])
         {
             aux = Vet[i];
             Vet[i] = Vet[menor];
@@ -24,24 +24,16 @@ void selecao(int Vet[], int n)
 }
 int main()
 {
-    int n = 9;
-    int Vetor[9] = {3, 6, 5, 1, 2, 8, 7, 9, 4};
+    int n = 2;
+    int Vetor[2] = {9, 3};
 
     selecao(Vetor, n);
 
-    printf("{");
-
+    printf("|");
     for (int i = 0; i < n; i++)
     {
-        if (Vetor[i] != Vetor[8])
-        {
-            printf("%d, ", Vetor[i]);
-        }
-        else
-            printf("%d", Vetor[i]);
+        printf(" %d |", Vetor[i]);
     }
-    printf("}");
-    printf("\n");
 
     return 0;
 }
