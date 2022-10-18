@@ -1,5 +1,4 @@
-#include "../include/List.h"
-
+#include "List.h"
 #include <stddef.h>
 #include <stdlib.h>
 
