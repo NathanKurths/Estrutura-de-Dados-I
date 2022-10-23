@@ -12,7 +12,7 @@ struct float_vector
   float *data;  // vetor de floats
 };
 
-bool _isFull(const FloatVector *vector)
+bool _isFull(const FloatVector *vector) // função privada
 {
   return vector->size == vector->capacity;
 }
