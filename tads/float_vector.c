@@ -85,3 +85,13 @@ void append(FloatVector *vector, float n)
   vector->data[vector->size++] = n;
   // inserir
 }
+
+void print(const FloatVector *vet)
+{
+  printf("Size: %d\n", vet->size);
+  printf("Capacity: %d\n", vet->capacity);
+
+for (int i=0; i<vet->size; i++){
+  printf("Vetor[%d] = %f\n", i, vet->data[i]);
+}
+}
