@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/linked_list.h"
+#include "linked_list.h"
 
 typedef struct _snode
 {
