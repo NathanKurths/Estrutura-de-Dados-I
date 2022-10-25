@@ -41,17 +41,20 @@ bool StaticStack_isFull(const StaticStack *S)
 
 void StaticStack_push(StaticStack *S, long value)
 {
-   //verificar cheio
-   //printar erro
+   if(StaticStack_isFull == 1)
+   {
+    printf("A pilha esta cheia.\n");
+   }
    S->top++;
    S->data[S->top] = value; 
 }
 
 int StaticStack_pop(StaticStack *S)
 {
-    //verificar vazio
-    //print msg erro
-
+    if(StaticStack_isEmpty == 1)
+    {
+    printf("A lista esta vazia.\n");
+    }
     int aux = S->data[S->top];
     S->top--;
     
