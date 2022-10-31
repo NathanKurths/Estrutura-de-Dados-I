@@ -31,6 +31,7 @@ int tamanho_lista(Lista *li)
 
         printf("Error: lista is NULL\n");
     else
+        printf("%d\n", li->qtd);
         return li->qtd;
 }
 
