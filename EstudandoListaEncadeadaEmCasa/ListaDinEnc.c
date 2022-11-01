@@ -200,3 +200,11 @@ int consulta_lista_mat(Lista *li, int mat, struct aluno *al){
         return 1;
     }
 }
+
+int print_lista(Lista *li){
+    Elem *no = *li;
+    while(no!=NULL){
+        printf("%d, ",no->dados.matricula);
+        no = no->prox;
+    }
+}
