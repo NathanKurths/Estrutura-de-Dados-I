@@ -6,7 +6,7 @@ struct elemento
 {
     struct aluno dados;
     struct aluno *prox;
-} typedef struct elemento Elem;
+}; typedef struct elemento Elem;
 
 Lista *cria_lista()
 {
@@ -34,10 +34,9 @@ void libera_lista(Lista *li)
 }
 
 int tamanho_lista(Lista *li){
+    int cont = 0;
     if(li==NULL) 
     return 0;
-    else
-    int cont = 0;
     Elem *no = *li;
     while(no != NULL){
         cont++;
@@ -46,15 +45,10 @@ int tamanho_lista(Lista *li){
     return cont;
 }
 
-int lista_vazia(Lista *li){
-    if(li==NULL) return 1;
-    if(*li==NULL) return 1;
-    return 0;
-}
 
 int insere_lista_inicio(Lista *li, struct aluno al){
     if(li==NULL) return 0;
-    Elemen *no = (Elem *)malloc(sizeof(Elem);
+    Elem *no = (Elem *)malloc(sizeof(Elem));
     if(no == NULL) return 0;
     no->dados = al;
     no->prox = (*li);
@@ -64,7 +58,7 @@ int insere_lista_inicio(Lista *li, struct aluno al){
 
 int insere_lista_final(Lista *li, struct aluno al){
     if(li==NULL) return 0;
-    Elemen *no = (Elem *)malloc(sizeof(Elem);
+    Elem *no = (Elem *)malloc(sizeof(Elem));
     if(no == NULL) return 0;
     no->dados = al;
     no->prox = NULL;
@@ -87,7 +81,7 @@ int lista_vazia(Lista *li){
     return 0;
 }
 
-int insere_lista_ordenada(Lista *li, struct aluno){
+int insere_lista_ordenada(Lista *li, struct aluno al){
     if(li == NULL) return 0;
     Elem *no = (Elem *)malloc(sizeof(Elem));
     if(no==NULL) return 0;
@@ -98,7 +92,7 @@ int insere_lista_ordenada(Lista *li, struct aluno){
         return 1;
     }
     else{
-        Elemen *ant, *atual = *li;
+        Elem *ant, *atual = *li;
         while(atual != NULL && atual->dados.matricula < al.matricula){
             ant = atual;
             atual = atual->prox;
@@ -161,7 +155,7 @@ int remove_lista(Lista *li, int mat){
 
 }
 
-int consulta_lista_pos(Lista *li, int pos, struct aluno al){
+int consulta_lista_pos(Lista *li, int pos, struct aluno *al){
     if(li==NULL || pos<=0) return 0;
     Elem *no = *li;
     int i = 1;
@@ -176,8 +170,9 @@ int consulta_lista_pos(Lista *li, int pos, struct aluno al){
     }
 }
 
-int consulta_lista_mat(Lista *li, int mat, struct aluno al){
-    if(li==NULL) return 0;
+int consulta_lista_mat(Lista *li, int mat, struct aluno *al){
+    if(li==NULL) 
+    return 0;
     Elem *no  = *li;
     while(no != NULL && no->dados.matricula !=mat){
         no = no->prox;
