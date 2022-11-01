@@ -33,6 +33,23 @@ void libera_lista(Lista *li)
     }
 }
 
+int remove_pares(Lista *li){
+
+    if(li==NULL) return 0;
+    if ((*li)==NULL) return 0;
+    Elem *no, *ant= *li;
+    int i;
+    while(no->prox != NULL){
+        ant = no;
+        no = no->prox;
+    if(i%2==0){
+        ant->prox = no->prox;
+        free(no);
+    }
+}
+    return 1;
+}
+
 int tamanho_lista(Lista *li){
     int cont = 0;
     if(li==NULL) 
