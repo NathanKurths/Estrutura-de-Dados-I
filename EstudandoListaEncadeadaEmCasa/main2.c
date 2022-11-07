@@ -8,7 +8,9 @@ int main()
    struct aluno segundo;
    segundo.matricula = 5;
    struct aluno terceiro;
+   terceiro.matricula = 10;
    struct aluno quarto;
+   quarto.matricula = 9;
    Lista *li;
    li = cria_lista();
    int x = insere_lista_inicio(li, primeiro);
